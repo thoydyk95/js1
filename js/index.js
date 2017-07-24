@@ -135,4 +135,11 @@ function solvQuadratic(a, b, c) {
     
     // body...
 }
-var a=parseInt()
+var a=parseInt();
+var a = parseFloat(prompt('Enter A'));
+var b = parseFloat(prompt('Enter B'));
+var c = parseFloat(prompt('Enter C'));
+
+var result = solveQuadratic(a, b, c);
+
+document.write(result);
