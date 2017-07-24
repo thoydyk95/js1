@@ -125,7 +125,7 @@ function calcDiscr(a, b, c) {
     return a*b-c;
 }
 
-function solvQuadratic(a, b, c) {
+function solveQuadratic(a, b, c) {
     let x1, x2;
     let discr = calcDiscr(a,b,c);
     if (discr < 0) {
