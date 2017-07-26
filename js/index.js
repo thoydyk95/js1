@@ -121,14 +121,24 @@ document.write('your age:' + age); */
 
 //let rot =Math.sgrt(16);
 //document.write(root);
-function calcDiscr(a, b, c) {
-    return a*b-c;
+/* function calcDiscr(a, b, c) {
+     
+    return  b * b - 4 * a * c;
 }
 
 function solveQuadratic(a, b, c) {
     let x1, x2;
     let discr = calcDiscr(a,b,c);
     if (discr < 0) {
+        
+        string = "пара комплексно-сопряженных корней<br>x<sub>1</sub> = (";
+    string += - b / ( 2 * a );    
+    string += ", ";  
+    string += Math.sqrt( -d ) / ( 2 * a );    
+    string += "), x<sub>2</sub> = (";  
+    string += - b / ( 2 * a);    string += ", ";  
+    string += - Math.sqrt( -d ) / ( 2 * a );    
+    string += ")"; 
         return "no roots";
     }
     return 'x1 ='+x1 +',x2=' +x2;
@@ -142,4 +152,35 @@ var c = parseFloat(prompt('Enter C'));
 
 var result = solveQuadratic(a, b, c);
 
-document.write(result);
+document.write(result); */
+// Simple quadratic solver 
+
+var a = Number(prompt('Enter A'));
+var b = Number(prompt('Enter B'));
+var c = Number(prompt('Enter C'));
+
+if (a == 0) {
+    document.write('А сannot be 0');
+}
+else {
+    var result = square(a, b, c);
+    document.write(result);
+}
+
+function square(a, b, c) {
+    var d = (b * b - 4 * a * c);
+    var result;
+
+    if (d < 0) {
+        result = 'Ooops, no roots here';
+    }
+    else if (d == 0) {
+        result = 'x1,2 = ' + (-b / (2 * a));
+    }
+    else if (d > 0) {
+        result = 'x1 = ' + (-b - Math.sqrt(d)) / (2 * a);
+        result += 'x2 = ' + (-b + Math.sqrt(d)) / (2 * a);
+    }
+
+    return result;
+}
